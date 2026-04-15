@@ -7,6 +7,7 @@ on:
 jobs:
   build:
     uses: Platform-System/Platform.CI-CD/.github/workflows/dotnet-build-template.yml@main
+    secrets: inherit
     with:
       project_path: 'Platform.Identity.sln'
       dependencies: 'Platform-System/Platform.Api,Platform-System/Platform.Application,Platform-System/Platform.Infrastructure,Platform-System/Platform.SystemContext,Platform-System/Platform.SharedKernel,Platform-System/Platform.Domain,Platform-System/Platform.BuildingBlocks'
