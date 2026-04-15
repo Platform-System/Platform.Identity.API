@@ -1,8 +1,8 @@
-﻿using MediatR;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Platform.Identity.API.Application.Commands.SyncUserSession;
-using Platform.SharedKernel.Extensions;
+using Platform.BuildingBlocks.Responses;
 
 namespace Platform.Identity.API.Presentation
 {

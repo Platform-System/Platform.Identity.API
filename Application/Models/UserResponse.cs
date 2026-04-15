@@ -1,4 +1,4 @@
-﻿namespace Platform.Identity.API.Application.Models
+namespace Platform.Identity.API.Application.Models
 {
     public class UserResponse
     {

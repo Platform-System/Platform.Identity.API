@@ -1,4 +1,4 @@
-﻿using Platform.Identity.API.Application.Models;
+using Platform.Identity.API.Application.Models;
 using Platform.Identity.API.Domain;
 using Platform.Identity.API.Infrastructure.Persistence.Models;
 

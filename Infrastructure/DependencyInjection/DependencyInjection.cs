@@ -1,14 +1,14 @@
 using Microsoft.EntityFrameworkCore;
-using Platform.Application.Extensions;
+using Platform.Application.DependencyInjection;
 using Platform.Identity.API.Infrastructure.Data;
-using Platform.Infrastructure.Extensions;
-using Platform.SystemContext.Extensions;
+using Platform.Infrastructure.DependencyInjection;
+using Platform.SystemContext.DependencyInjection;
 using System.Reflection;
-using Platform.BuildingBlocks.Extensions;
+using Platform.BuildingBlocks.DependencyInjection;
 using Platform.Infrastructure.Data;
 using StackExchange.Redis;
 
-namespace Platform.Identity.API.Infrastructure.Extensions
+namespace Platform.Identity.API.Infrastructure.DependencyInjection
 {
     public static class DependencyInjection
     {

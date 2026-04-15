@@ -1,5 +1,5 @@
 using Platform.Api.Extensions;
-using Platform.Identity.API.Infrastructure.Extensions;
+using Platform.Identity.API.Infrastructure.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 

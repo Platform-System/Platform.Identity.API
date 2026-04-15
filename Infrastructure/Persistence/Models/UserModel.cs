@@ -1,4 +1,4 @@
-﻿using Platform.Domain.Common;
+using Platform.Domain.Common;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 

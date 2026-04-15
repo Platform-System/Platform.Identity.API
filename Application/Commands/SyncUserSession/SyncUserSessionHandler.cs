@@ -4,7 +4,7 @@ using Platform.Identity.API.Application.Mappers;
 using Platform.Identity.API.Application.Models;
 using Platform.Identity.API.Domain;
 using Platform.Identity.API.Infrastructure.Persistence.Models;
-using Platform.SharedKernel.Responses;
+using Platform.BuildingBlocks.Responses;
 using Platform.SystemContext.Abstractions;
 
 namespace Platform.Identity.API.Application.Commands.SyncUserSession

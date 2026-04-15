@@ -1,4 +1,4 @@
-﻿using Platform.Domain.Common;
+using Platform.Domain.Common;
 
 namespace Platform.Identity.API.Domain
 {

@@ -20,6 +20,7 @@
     <ProjectReference Include="..\Platform.Infrastructure\Platform.Infrastructure.csproj" />
     <ProjectReference Include="..\Platform.SystemContext\Platform.SystemContext.csproj" />
     <ProjectReference Include="..\Platform.SharedKernel\Platform.SharedKernel.csproj" />
+    <ProjectReference Include="..\Platform.BuildingBlocks\Platform.BuildingBlocks.csproj" />
   </ItemGroup>
 
 </Project>
