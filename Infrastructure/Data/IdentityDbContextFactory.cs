@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using Platform.BuildingBlocks.DateTimes;
 
 namespace Platform.Identity.API.Infrastructure.Data;
 
@@ -21,7 +20,7 @@ public class IdentityDbContextFactory : IDesignTimeDbContextFactory<IdentityDbCo
         optionsBuilder.UseNpgsql(connectionString);
 
         // 3. Tạo một Mock "DateTimeProvider" giả định cho lúc Design-time
-        return new IdentityDbContext(optionsBuilder.Options, new SystemDateTimeProvider());
+        return new IdentityDbContext(optionsBuilder.Options);
     }
 }
 
