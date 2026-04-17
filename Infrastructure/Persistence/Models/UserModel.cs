@@ -16,9 +16,8 @@ namespace Platform.Identity.API.Infrastructure.Persistence.Models
 
         public UserModel() { }
 
-        public UserModel(Guid id, Guid identityId, string userName, string email, string? avatarUrl, string? bio)
+        public UserModel(Guid id, Guid identityId, string userName, string email, string? avatarUrl, string? bio) : base(id)
         {
-            Id = id; 
             IdentityId = identityId;
             UserName = userName;
             Email = email;
