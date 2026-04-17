@@ -26,7 +26,7 @@ namespace Platform.Identity.API.Infrastructure.DependencyInjection
             services.AddSingleton<IConnectionMultiplexer>(sp => 
                 ConnectionMultiplexer.Connect("localhost:6379,abortConnect=false"));
 
-            services.AddInfrastructure();
+            services.AddInfrastructure(configuration);
             return services;
         }
     }
