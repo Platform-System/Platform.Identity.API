@@ -1,8 +1,6 @@
-using Platform.Identity.API.Application.Models;
 using Platform.Identity.API.Domain;
-using Platform.Identity.API.Infrastructure.Persistence.Models;
 
-namespace Platform.Identity.API.Application.Mappers
+namespace Platform.Identity.API.Application.Features.Users.Shared
 {
     public static class UserMapper
     {

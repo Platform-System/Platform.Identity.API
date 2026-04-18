@@ -1,13 +1,13 @@
 using Platform.Application.Abstractions.Data;
 using Platform.Application.Messaging;
+using Platform.BuildingBlocks.Responses;
+using Platform.Identity.API.Application.Features.Users.Shared;
 using Platform.Identity.API.Application.Mappers;
-using Platform.Identity.API.Application.Models;
 using Platform.Identity.API.Domain;
 using Platform.Identity.API.Infrastructure.Persistence.Models;
-using Platform.BuildingBlocks.Responses;
 using Platform.SystemContext.Abstractions;
 
-namespace Platform.Identity.API.Application.Commands.SyncUserSession
+namespace Platform.Identity.API.Application.Features.Users.Commands.SyncUserSession
 {
     public class SyncUserSessionHandler : ICommandHandler<SyncUserSessionCommand, UserResponse>
     {
@@ -29,7 +29,8 @@ namespace Platform.Identity.API.Application.Commands.SyncUserSession
             if (string.IsNullOrEmpty(_userContext.UserName) || string.IsNullOrEmpty(_userContext.Email))
                 return Result<UserResponse>.Failure("Invalid token data.");
 
-            var userModel = await _unitOfWork.GetRepository<UserModel>().FindAsync(x => x.IdentityId == identityId.Value, false, cancellationToken);
+            var userModel = await _unitOfWork.GetRepository<UserModel>()
+                .FindAsync(x => x.IdentityId == identityId.Value, false, cancellationToken);
 
             User user;
             if (userModel == null)
