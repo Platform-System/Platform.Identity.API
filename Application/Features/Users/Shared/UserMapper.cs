@@ -9,6 +9,7 @@ namespace Platform.Identity.API.Application.Features.Users.Shared
             return new UserResponse
             {
                 Id = user.Id,
+                IdentityId = user.IdentityId,
                 UserName = user.UserName,
                 Email = user.Email
             };

@@ -3,7 +3,6 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Platform.Identity.API.Infrastructure.Data;
 
@@ -12,7 +11,7 @@ using Platform.Identity.API.Infrastructure.Data;
 namespace Platform.Identity.API.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(IdentityDbContext))]
-    [Migration("20260414161835_InitialCreate")]
+    [Migration("20260418122000_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
