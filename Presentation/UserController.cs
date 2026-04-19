@@ -1,6 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Platform.Identity.API.Application.Features.Users.Commands.AssignRealmRole;
 using Platform.Identity.API.Application.Features.Users.Commands.SyncUserSession;
 using Platform.Identity.API.Application.Features.Users.Queries.GetCurrentUser;
 using Platform.BuildingBlocks.Responses;
@@ -30,6 +31,14 @@ namespace Platform.Identity.API.Presentation
         public async Task<IActionResult> Sync(CancellationToken cancellationToken)
         {
             var result = await _sender.Send(new SyncUserSessionCommand(), cancellationToken);
+            return result.ToActionResult();
+        }
+
+        [HttpPost("roles")]
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> AssignRealmRole([FromBody] AssignRealmRoleRequest request, CancellationToken cancellationToken)
+        {
+            var result = await _sender.Send(new AssignRealmRoleCommand(request), cancellationToken);
             return result.ToActionResult();
         }
     }

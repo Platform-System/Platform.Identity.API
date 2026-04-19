@@ -6,6 +6,8 @@ using Platform.SystemContext.DependencyInjection;
 using System.Reflection;
 using Platform.BuildingBlocks.DependencyInjection;
 using Platform.Infrastructure.Data;
+using Platform.Identity.API.Application.Abstractions;
+using Platform.Identity.API.Infrastructure.Keycloak;
 using StackExchange.Redis;
 
 namespace Platform.Identity.API.Infrastructure.DependencyInjection
@@ -22,6 +24,12 @@ namespace Platform.Identity.API.Infrastructure.DependencyInjection
             services.AddBuildingBlocks();
             services.AddApplication(assembly);
             services.AddSystemContext();
+            services.Configure<KeycloakAdminOptions>(configuration.GetSection(KeycloakAdminOptions.SectionName));
+            services.AddHttpClient<IKeycloakAdminClient, KeycloakAdminClient>((sp, client) =>
+            {
+                var options = sp.GetRequiredService<Microsoft.Extensions.Options.IOptions<KeycloakAdminOptions>>().Value;
+                client.BaseAddress = new Uri(options.BaseUrl.TrimEnd('/'));
+            });
             
             services.AddSingleton<IConnectionMultiplexer>(sp => 
                 ConnectionMultiplexer.Connect("localhost:6379,abortConnect=false"));

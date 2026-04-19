@@ -13,16 +13,5 @@ namespace Platform.Identity.API.Infrastructure.Persistence.Models
         public string Email { get; set; } = null!;
         public string? AvatarUrl { get; set; }
         public string? Bio { get; set; }
-
-        public UserModel() { }
-
-        public UserModel(Guid id, Guid identityId, string userName, string email, string? avatarUrl, string? bio) : base(id)
-        {
-            IdentityId = identityId;
-            UserName = userName;
-            Email = email;
-            AvatarUrl = avatarUrl;
-            Bio = bio;
-        }
     }
 }

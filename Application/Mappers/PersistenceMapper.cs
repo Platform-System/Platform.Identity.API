@@ -11,7 +11,15 @@ public static class PersistenceMapper
     }
     public static UserModel ToPersistence(this User domain)
     {
-        return new UserModel(domain.Id, domain.IdentityId, domain.UserName, domain.Email, domain.AvatarUrl, domain.Bio);
+        return new UserModel
+        {
+            Id = domain.Id,
+            IdentityId = domain.IdentityId,
+            UserName = domain.UserName,
+            Email = domain.Email,
+            AvatarUrl = domain.AvatarUrl,
+            Bio = domain.Bio
+        };
     }
     public static void UpdateIdentity(this UserModel model, User domain)
     {
