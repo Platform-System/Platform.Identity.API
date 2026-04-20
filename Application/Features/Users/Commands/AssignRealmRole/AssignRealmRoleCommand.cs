@@ -5,7 +5,6 @@ namespace Platform.Identity.API.Application.Features.Users.Commands.AssignRealmR
 public sealed class AssignRealmRoleCommand : ICommand<AssignRealmRoleResponse>
 {
     public AssignRealmRoleRequest Request { get; }
-
     public AssignRealmRoleCommand(AssignRealmRoleRequest request)
     {
         Request = request;
