@@ -7,6 +7,14 @@ namespace Platform.Identity.API.Infrastructure.Persistence.Models
     [Table("Users")] 
     public class UserModel : Entity
     {
+        public UserModel()
+        {
+        }
+
+        public UserModel(Guid id) : base(id)
+        {
+        }
+
         [Required]
         public Guid IdentityId { get; set; } 
         public string UserName { get; set; } = null!;
