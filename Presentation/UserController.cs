@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Platform.Identity.API.Application.Features.Users.Commands.AssignRealmRole;
 using Platform.Identity.API.Application.Features.Users.Commands.SyncUserSession;
 using Platform.Identity.API.Application.Features.Users.Queries.GetCurrentUser;
+using Platform.Identity.API.Application.Features.Users.Queries.GetUserById;
 using Platform.BuildingBlocks.Responses;
 
 namespace Platform.Identity.API.Presentation
@@ -24,6 +25,13 @@ namespace Platform.Identity.API.Presentation
         public async Task<IActionResult> Me(CancellationToken cancellationToken)
         {
             var result = await _sender.Send(new GetCurrentUserQuery(), cancellationToken);
+            return result.ToActionResult();
+        }
+
+        [HttpGet("{id:guid}")]
+        public async Task<IActionResult> GetById(Guid id, CancellationToken cancellationToken)
+        {
+            var result = await _sender.Send(new GetUserByIdQuery(id), cancellationToken);
             return result.ToActionResult();
         }
 
